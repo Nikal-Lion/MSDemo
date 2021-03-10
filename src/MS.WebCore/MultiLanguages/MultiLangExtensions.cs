@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Globalization;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Localization;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace MS.WebCore.MultiLanguages
 {
@@ -38,6 +38,7 @@ namespace MS.WebCore.MultiLanguages
         public static string GetSpecificLanguageString(this IStringLocalizer localizer, string specificLang, string key)
         {
 #if NETCOREAPP3_1_OR_GREATER
+            //TODO localizer.WithCulture has Obsoleted at netcoreapp3.1 or greater
             return null;
 #else
             return localizer.WithCulture(new CultureInfo(specificLang))[key].ToString();

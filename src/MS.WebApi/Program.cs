@@ -55,8 +55,13 @@ namespace MS.WebApi
             .UseServiceProviderFactory(new AutofacServiceProviderFactory())//Ìæ»»autofac×÷ÎªDIÈÝÆ÷
             .ConfigureWebHostDefaults(webBuilder =>
             {
-                webBuilder.UseStartup<Startup>();
+                webBuilder
+#if DEBUG
+                .UseEnvironment("Development")
+#endif
+                .UseStartup<Startup>();
             })
-            .AddNlogService();
+            .AddNlogService()
+            ;
     }
 }

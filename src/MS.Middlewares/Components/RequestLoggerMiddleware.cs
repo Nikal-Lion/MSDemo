@@ -1,14 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Logging;
-using MS.Middlewares.Dto;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MS.Middlewares
+namespace MS.Middlewares.Components
 {
     public class RequestLoggerMiddleware
     {
@@ -90,7 +89,7 @@ namespace MS.Middlewares
         }
         public async Task Invoke(HttpContext context)
         {
-            var logDto = new RequestResponseLog(_logger);
+            var logDto = new Dto.RequestResponseLog(_logger);
             await HandleRequestLogAsync(context.Request, logDto);
             logDto.PrintRequest();
 
@@ -109,7 +108,7 @@ namespace MS.Middlewares
         /// <param name="response"></param>
         /// <param name="logDto"></param>
         /// <returns></returns>
-        private async Task HandleResponseLogAsync(RequestResponseLog logDto, Stream originalBody, Stream fakeBody)
+        private async Task HandleResponseLogAsync(Dto.RequestResponseLog logDto, Stream originalBody, Stream fakeBody)
         {
             logDto.ExcuteEndTime = DateTime.Now;
             fakeBody.Position = 0;
@@ -127,7 +126,7 @@ namespace MS.Middlewares
         /// <param name="request"></param>
         /// <param name="log"></param>
         /// <returns></returns>
-        private async Task HandleRequestLogAsync(HttpRequest request, RequestResponseLog log)
+        private async Task HandleRequestLogAsync(HttpRequest request, Dto.RequestResponseLog log)
         {
             log.Url = $"{request.Host}{request.Path}";
             log.ExcuteStartTime = DateTime.Now;

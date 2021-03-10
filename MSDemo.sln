@@ -49,13 +49,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
+		README.md = README.md
 		src\references.dgml = src\references.dgml
 		删除_BIN和OBJ_文件夹.bat = 删除_BIN和OBJ_文件夹.bat
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.0Middleware", "7.0Middleware", "{B2D396E1-58D0-4B3F-972D-A901FCB4E37A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Middleware", "src\MS.Middleware\MS.Middleware.csproj", "{69CC1F5C-C210-4FA4-B449-2F10EF540A04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Middlewares", "src\MS.Middlewares\MS.Middlewares.csproj", "{69CC1F5C-C210-4FA4-B449-2F10EF540A04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

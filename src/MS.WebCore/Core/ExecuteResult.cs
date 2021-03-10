@@ -58,7 +58,7 @@
         /// 执行信息（一般是错误信息）
         /// 默认置空
         /// </summary>
-        public string Message { get; set; } = string.Empty; 
+        public string Message { get; set; } = string.Empty;
         #endregion
     }
     /// <summary>
@@ -118,7 +118,7 @@
         public ExecuteResult(T result)
         {
             SetData(result);
-        } 
+        }
         #endregion
 
         public T Result { get; set; }

@@ -5,10 +5,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Ms.Middleware;
 using MS.Component.Aop;
 using MS.Component.Jwt;
 using MS.DbContexts;
+using MS.Middlewares;
 using MS.Models.Automapper;
 using MS.Services;
 using MS.UnitOfWork;
@@ -24,8 +24,14 @@ namespace MS.WebApi
         //{
         //    Configuration = configuration;
         //}
+        /// <summary>
+        /// 
+        /// </summary>
         public ILifetimeScope AutofacContainer { get; private set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="env"></param>
         public Startup(IWebHostEnvironment env)
         {
             // In ASP.NET Core 3.0 `env` will be an IWebHostingEnvironment, not IHostingEnvironment.
@@ -47,13 +53,20 @@ namespace MS.WebApi
             //将业务层程序集名称传了进去，给业务层接口和实现做了注册，也给业务层各方法开启了代理
             builder.AddAopService(ServiceExtensions.GetAssemblyName());
         }
+        /// <summary>
+        /// 
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to add services to the container.
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             //添加多语言本地化支持
             services.AddMultiLanguages();
+            services.AddSwaggerGen();
 
             services
                 .AddControllers(options =>
@@ -65,7 +78,8 @@ namespace MS.WebApi
                 {
                     options.DataAnnotationLocalizerProvider = (type, factory) =>
                     factory.Create(typeof(SharedResource));//给注解添加本地化资源提供器Localizerprovider
-                });
+                })
+                .AddJsonDateTimeConverter();
 
             //注册跨域策略
             services.AddCorsPolicy(Configuration);
@@ -87,30 +101,44 @@ namespace MS.WebApi
             services.AddJwtService(Configuration);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
+        /// <param name="app"></param>
+        /// <param name="env"></param>
+#if NETCOREAPP3_0_OR_GREATER
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+#else
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+#endif
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+
+                //Enable middleware to serve swagger - ui(HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "ms demo V1");
+                    c.RoutePrefix = string.Empty;
+                });
             }
 
             app.UseMultiLanguage(Configuration);//添加多语言本地化支持
 
-            app.UseRouting();
+            app.UseOptionsRequestHandler();
 
             app.UseCors(WebCoreExtensions.MyAllowSpecificOrigins);//添加跨域
 
             app.UseAuthentication();//添加认证中间件
 
-            app.UseAuthorization();
-
-            app.UseRequestLog();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
+            app.UseRouting()
+                .UseAuthorization()
+                .UseEndpoints(endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
         }
     }
 }

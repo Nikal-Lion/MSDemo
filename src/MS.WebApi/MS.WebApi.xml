@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MS.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:MS.WebApi.Filters.ApiExceptionFilter">
+            <summary>
+            api异常过滤器
+            </summary>
+        </member>
+        <member name="T:MS.WebApi.Filters.ApiResultFilter">
+            <summary>
+            给api返回结果包一层状态码
+            </summary>
+        </member>
+        <member name="M:MS.WebApi.DBSeed.Initialize(MS.UnitOfWork.IUnitOfWork{MS.DbContexts.MSDbContext})">
+            <summary>
+            数据初始化
+            </summary>
+            <param name="unitOfWork"></param>
+            <returns>返回是否创建了数据库（非迁移）</returns>
+        </member>
+    </members>
+</doc>

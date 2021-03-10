@@ -5,6 +5,7 @@
   <Var name="UseUnicodeNames" value="true" />
 
   <Module file="$(InPath)\MS.Services.dll" />
+  <Module file="$(InPath)\MS.Middlewares.dll" />
   <Module file="$(InPath)\MS.Component.Jwt.dll" />
   <Module file="$(InPath)\MS.Component.Aop.dll" />
 </Obfuscator>

@@ -1,11 +1,11 @@
-﻿using MS.Common.Extensions;
+﻿using Microsoft.Extensions.Logging;
+using MS.Common.Extensions;
 using MS.Common.IDCode;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace MS.Middlewares.Dto
+namespace MS.Middlewares.Components.Dto
 {
     public class RequestResponseLog
     {
