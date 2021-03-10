@@ -7,6 +7,9 @@ using System;
 
 namespace MS.WebApi
 {
+    /// <summary>
+    /// 种子数据
+    /// </summary>
     public static class DBSeed
     {
         /// <summary>

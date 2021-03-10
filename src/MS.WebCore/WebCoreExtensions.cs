@@ -135,18 +135,15 @@ namespace MS.WebCore
                     Url = "http://localhost:5000",
                     Description = "本地"
                 });
-                // TODO xml文件部分未完成
-                // 原因: 因xml生成文件路径异常
 
                 //实体层的xml文件名
-                string xmlFile = $"{typeof(IEntity).Assembly.GetName().Name}.xml";
-                string xmlEntityPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                string xmlEntityPath = GetXmlAbsolutePath(typeof(IEntity).Assembly.GetName().Name);
                 if (File.Exists(xmlEntityPath))
                 {
                     options.IncludeXmlComments(xmlEntityPath);
                 }
-                xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                //var xmlPath = GetXmlAbsolutePath(Assembly.GetExecutingAssembly().GetName().Name); 因当前文件不在WebApi中，所以获取当前执行assembly name不是WebApi，胆汁异常
+                var xmlPath = GetXmlAbsolutePath("MS.WebApi");
                 if (!File.Exists(xmlPath))
                     throw new InvalidOperationException("The XML file does not exist for Swagger - see link above for more info.");
                 options.IncludeXmlComments(xmlPath);
@@ -158,6 +155,16 @@ namespace MS.WebCore
                 });
             });
             return services;
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="xmlFileName"></param>
+        /// <returns></returns>
+        public static string GetXmlAbsolutePath(string xmlFileName)
+        {
+            string xmlFile = $"{xmlFileName}.xml";
+            return Path.Combine(AppContext.BaseDirectory, xmlFile);
         }
     }
 }

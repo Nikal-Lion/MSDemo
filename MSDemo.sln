@@ -58,6 +58,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7.0Middleware", "7.0Middlew
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MS.Middlewares", "src\MS.Middlewares\MS.Middlewares.csproj", "{69CC1F5C-C210-4FA4-B449-2F10EF540A04}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCoreTests", "tests\WebCoreTests\WebCoreTests.csproj", "{DE71E58F-C975-45CB-BD42-85C429245DD2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -116,6 +118,10 @@ Global
 		{69CC1F5C-C210-4FA4-B449-2F10EF540A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{69CC1F5C-C210-4FA4-B449-2F10EF540A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{69CC1F5C-C210-4FA4-B449-2F10EF540A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE71E58F-C975-45CB-BD42-85C429245DD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE71E58F-C975-45CB-BD42-85C429245DD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE71E58F-C975-45CB-BD42-85C429245DD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE71E58F-C975-45CB-BD42-85C429245DD2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -142,6 +148,7 @@ Global
 		{5065D98C-A7B4-4259-B998-62142E79FACD} = {1F531AEB-0FE7-4F38-A665-28571B81E042}
 		{B2D396E1-58D0-4B3F-972D-A901FCB4E37A} = {C0341421-24C9-4316-B24D-9260E97BE887}
 		{69CC1F5C-C210-4FA4-B449-2F10EF540A04} = {B2D396E1-58D0-4B3F-972D-A901FCB4E37A}
+		{DE71E58F-C975-45CB-BD42-85C429245DD2} = {1F531AEB-0FE7-4F38-A665-28571B81E042}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F2C6288D-0E94-4685-8AB6-D0E4FB1BBA93}

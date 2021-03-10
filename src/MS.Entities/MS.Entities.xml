@@ -4,5 +4,235 @@
         <name>MS.Entities</name>
     </assembly>
     <members>
+        <member name="T:MS.Entities.Core.IEntity">
+            <summary>
+            没有Id主键的实体继承这个
+            </summary>
+        </member>
+        <member name="T:MS.Entities.Core.BaseEntity">
+            <summary>
+            有Id主键的实体继承这个
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Core.BaseEntity.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Core.BaseEntity.StatusCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Core.BaseEntity.Creator">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Core.BaseEntity.CreateTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Core.BaseEntity.Modifier">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Core.BaseEntity.ModifyTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MS.Entities.Core.StatusCode">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:MS.Entities.Core.StatusCode.Deleted">
+            <summary>
+            软删除，已删除的无法恢复，无法看见，暂未使用
+            </summary>
+        </member>
+        <member name="F:MS.Entities.Core.StatusCode.Enable">
+            <summary>
+            生效
+            </summary>
+        </member>
+        <member name="F:MS.Entities.Core.StatusCode.Disable">
+            <summary>
+            失效的还可以改为生效
+            </summary>
+        </member>
+        <member name="T:MS.Entities.Logrecord">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.Id">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.LogDate">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.LogLevel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.Logger">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.Message">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.Exception">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.MachineName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.MachineIp">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.NetRequestMethod">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.NetRequestUrl">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.NetUserIsauthenticated">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.NetUserAuthtype">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Logrecord.NetUserIdentity">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MS.Entities.Role">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Role.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Role.DisplayName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.Role.Remark">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MS.Entities.User">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.User.Account">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.User.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.User.Email">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.User.Phone">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.User.RoleId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.User.Role">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MS.Entities.UserLogin">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.UserLogin.UserId">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.UserLogin.Account">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.UserLogin.HashedPassword">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.UserLogin.LastLoginTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.UserLogin.AccessFailedCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.UserLogin.IsLocked">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.UserLogin.LockedTime">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.Entities.UserLogin.User">
+            <summary>
+            
+            </summary>
+        </member>
     </members>
 </doc>

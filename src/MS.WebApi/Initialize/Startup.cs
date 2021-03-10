@@ -18,31 +18,24 @@ using MS.WebCore.MultiLanguages;
 
 namespace MS.WebApi
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class Startup
     {
-        //public Startup(IConfiguration configuration)
-        //{
-        //    Configuration = configuration;
-        //}
         /// <summary>
         /// 
         /// </summary>
-        public ILifetimeScope AutofacContainer { get; private set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="env"></param>
-        public Startup(IWebHostEnvironment env)
+        /// <param name="configuration"></param>
+        public Startup(IConfiguration configuration)
         {
-            // In ASP.NET Core 3.0 `env` will be an IWebHostingEnvironment, not IHostingEnvironment.
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(env.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables();
-            Configuration = builder.Build();
+            Configuration = configuration;
         }
-        //添加autofac的DI配置容器
+
+        /// <summary>
+        /// 添加autofac的DI配置容器
+        /// </summary>
+        /// <param name="builder"></param>
         public void ConfigureContainer(ContainerBuilder builder)
         {
             //注册IBaseService和IRoleService接口及对应的实现类

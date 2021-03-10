@@ -4,14 +4,98 @@
         <name>MS.WebApi</name>
     </assembly>
     <members>
+        <member name="T:MS.WebApi.Controllers.AccountController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.WebApi.Controllers.AccountController.#ctor(MS.Services.IAccountService)">
+            <summary>
+            
+            </summary>
+            <param name="accountService"></param>
+        </member>
+        <member name="M:MS.WebApi.Controllers.AccountController.Login(MS.Models.ViewModel.LoginViewModel)">
+            <summary>
+            
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MS.WebApi.Controllers.AuthorizeController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:MS.WebApi.Controllers.RoleController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.WebApi.Controllers.RoleController.#ctor(MS.Services.IRoleService)">
+            <summary>
+            
+            </summary>
+            <param name="roleService"></param>
+        </member>
+        <member name="M:MS.WebApi.Controllers.RoleController.Post(MS.Models.ViewModel.RoleViewModel)">
+            <summary>
+            
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MS.WebApi.Controllers.RoleController.Put(MS.Models.ViewModel.RoleViewModel)">
+            <summary>
+            
+            </summary>
+            <param name="viewModel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MS.WebApi.Controllers.RoleController.Delete(System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
         <member name="T:MS.WebApi.Filters.ApiExceptionFilter">
             <summary>
             api异常过滤器
             </summary>
         </member>
+        <member name="M:MS.WebApi.Filters.ApiExceptionFilter.#ctor(Microsoft.Extensions.Logging.ILogger{MS.WebApi.Filters.ApiExceptionFilter})">
+            <summary>
+            
+            </summary>
+            <param name="logger"></param>
+        </member>
+        <member name="M:MS.WebApi.Filters.ApiExceptionFilter.OnException(Microsoft.AspNetCore.Mvc.Filters.ExceptionContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
         <member name="T:MS.WebApi.Filters.ApiResultFilter">
             <summary>
             给api返回结果包一层状态码
+            </summary>
+        </member>
+        <member name="M:MS.WebApi.Filters.ApiResultFilter.OnResultExecuting(Microsoft.AspNetCore.Mvc.Filters.ResultExecutingContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:MS.WebApi.Filters.ApiResultFilter.OnResultExecuted(Microsoft.AspNetCore.Mvc.Filters.ResultExecutedContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="T:MS.WebApi.DBSeed">
+            <summary>
+            种子数据
             </summary>
         </member>
         <member name="M:MS.WebApi.DBSeed.Initialize(MS.UnitOfWork.IUnitOfWork{MS.DbContexts.MSDbContext})">
@@ -20,6 +104,64 @@
             </summary>
             <param name="unitOfWork"></param>
             <returns>返回是否创建了数据库（非迁移）</returns>
+        </member>
+        <member name="T:MS.WebApi.Startup">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.WebApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:MS.WebApi.Startup.ConfigureContainer(Autofac.ContainerBuilder)">
+            <summary>
+            添加autofac的DI配置容器
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="P:MS.WebApi.Startup.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.WebApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:MS.WebApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+        <member name="T:MS.WebApi.Program">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:MS.WebApi.Program.Configuration">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:MS.WebApi.Program.Main(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:MS.WebApi.Program.CreateHostBuilder(System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
         </member>
     </members>
 </doc>

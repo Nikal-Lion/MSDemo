@@ -11,12 +11,18 @@ namespace MS.WebApi.Filters
     public class ApiExceptionFilter : IExceptionFilter
     {
         private readonly ILogger<ApiExceptionFilter> _logger;
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="logger"></param>
         public ApiExceptionFilter(ILogger<ApiExceptionFilter> logger)
         {
             _logger = logger;
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
         public void OnException(ExceptionContext context)
         {
             string methodInfo = $"{context.RouteData.Values["controller"] as string}Controller.{context.RouteData.Values["action"] as string}:{context.HttpContext.Request.Method}";

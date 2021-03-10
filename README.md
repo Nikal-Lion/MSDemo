@@ -47,7 +47,12 @@ ENTRYPOINT ["/app/MS.WebApi"]
   4. 设置环境变量
   5. 修改目录，并设置入口
 
+### 数据库说明
 
+- 本示例使用MySQL作为存储数据库
+- 需要手动创建数据库 ``` create database msdb default character set utf8mb4 collate utf8mb4_unicode_ci; ```
+- 程序启动时会生成种子数据到数据库的表中
+- 实体映射数据库表存在项目 MS.DbContexts 的 Mappings目录下
 
 
 

@@ -9,6 +9,10 @@ namespace MS.WebApi.Filters
     /// </summary>
     public class ApiResultFilter : IResultFilter
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
         public void OnResultExecuting(ResultExecutingContext context)
         {
             if (context.Result != null)
@@ -47,7 +51,10 @@ namespace MS.WebApi.Filters
 
             }
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="context"></param>
         public void OnResultExecuted(ResultExecutedContext context)
         {
         }

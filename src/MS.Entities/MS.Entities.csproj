@@ -7,8 +7,18 @@
   </PropertyGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <OutputPath>bin\</OutputPath>
+    <OutputPath>bin\Debug\net5.0</OutputPath>
     <DocumentationFile>MS.Entities.xml</DocumentationFile>
   </PropertyGroup>
+  
+  <ItemGroup>
+    <Compile Remove="net5.0\**" />
+    <EmbeddedResource Remove="net5.0\**" />
+    <None Remove="net5.0\**" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <None Remove="MS.Entities.xml" />
+  </ItemGroup>
 
 </Project>
